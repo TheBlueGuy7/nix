@@ -47,6 +47,7 @@
     fzf
     tree
     gh
+    neovim
 
     # Hyprland
 
