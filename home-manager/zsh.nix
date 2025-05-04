@@ -23,7 +23,7 @@
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
       hyprconf = "nvim ${flakeDir}/home-manager/modules/hyprland.nix";
 
-      ll = "ls -l";
+      ll = "eza -l";
       v = "nvim";
       se = "sudoedit";
       ff = "fastfetch";
