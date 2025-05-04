@@ -1,163 +1,201 @@
+{pkgs, ...}:
 {
+  home.packages = [ pkgs.rofi ];
+
   programs.rofi = {
     enable = true;
+    theme = {
+      "*" = {
+        background = "#1E2127FF";
+        "background-alt" = "#282B31FF"; 
+        foreground = "#FFFFFFFF";
+        selected = "#61AFEFFF";
+        active = "#98C379FF";
+        urgent = "#E06C75FF";
 
-    # General Rofi settings
-    modi = "drun";
-    showIcons = true;
-    displayCalc = " ";
-    displayDrun = " ";
-    drunDisplayFormat = "{name}";
-    font = "JetBrains Mono NF 12";
-    
-    # Window settings
-    window = {
-      fullscreen = false;
-      transparency = "real";
-      cursor = "default";
-      backgroundColor = "#1e2127cc";  # Transparent black with 12% opacity
-      border = "0px";
-      borderColor = "#61AFEFFF";
-      width = "100%";
-      height = "100%";
-      margin = "0px";
-      padding = "0px";
-    };
-    
-    # Element settings
-    element = {
-      normalNormal = {
-        backgroundColor = "transparent";
-        textColor = "#FFFFFFFF";  # White
+        "text-selected" = "@background";
+        text = "@foreground";
+
+        "shade-shadow" = "white / 6%";
+        "shade-bg" = "white / 12%";
+        "shade-border" = "white / 24%";
       };
 
-      alternateNormal = {
-        backgroundColor = "transparent";
-        textColor = "#FFFFFFFF";  # White
+      configuration = {
+        modi = "drun";
+        "show-icons" = true;
+        "display-calc" = " ";
+        "display-drun" = " ";
+        "drun-display-format" = "{name}";
+        font = "JetBrains Mono NF 12";
       };
 
-      selectedNormal = {
-        backgroundColor = "#282B31";  # Shade background color (lighter shade)
-        textColor = "#FFFFFF";  # White text
-        border = "1px solid #61AFEFFF";  # Selected border color
+      window = {
+        fullscreen = false;
+        transparency = "real";
+        cursor = "default";
+        "background-color" = "black / 12%";
+        border = 0;
+        "border-color" = "#61AFEFFF";
+        width = "100%";
+        height = "100%";
+        margin = 0;
+        padding = 0;
       };
 
-      icon = {
-        backgroundColor = "transparent";
-        textColor = "inherit";
-        size = "72px";
+      "element normal.normal, element alternate.normal" = {
+        "background-color" = "transparent";
+        "text-color" = "@text";
+      };
+
+      "element selected.normal" = {
+        "background-color" = "@shade-bg";
+        "text-color" = "white";
+        border = "1px solid";
+        "border-color" = "#61AFEFFF";
+      };
+
+      "element-text" = {
+        "background-color" = "transparent";
+        "text-color" = "inherit";
+        highlight = "inherit";
+        cursor = "inherit";
+        "vertical-align" = "center";
+        "horizontal-align" = "center";
+      };
+
+      element = {
+        cursor = "pointer";
+        "border-radius" = 24;
+        "background-color" = "transparent";
+        "text-color" = "@text";
+        orientation = "vertical";
+        spacing = 16;
+        margin = 0;
+        padding = "36px 0px";
+      };
+
+      "element-icon" = {
+        "background-color" = "transparent";
+        "text-color" = "inherit";
+        size = 72;
         cursor = "inherit";
       };
-      
-      spacing = "16px";
-      margin = "0px";
-      padding = "36px 0px";
-    };
 
-    # Listview settings
-    listview = {
-      border = "0px";
-      cursor = "default";
-      columns = 6;
-      lines = 4;
-      cycle = true;
-      dynamic = true;
-      scrollbar = false;
-      layout = "vertical";
-      reverse = false;
-      fixedHeight = true;
-      fixedColumns = true;
-      backgroundColor = "transparent";
-      textColor = "#FFFFFFFF";  # White
-      spacing = "0px";
-      margin = "0px";
-      padding = "0px";
-    };
-    
-    # Scrollbar settings
-    scrollbar = {
-      margin = "0px 4px";
-      handleWidth = "8px";
-      handleColor = "#FFFFFF";  # White handle
-      backgroundColor = "#FFFFFF1A";  # Light shadow background
-      borderRadius = "4px";
-    };
+      listview = {
+        border = 0;
+      };
 
-    # Message settings
-    message = {
-      backgroundColor = "#282B31";  # Background of messages
-      border = "1px solid transparent";
-      borderRadius = "12px";
-      padding = "24px";
-    };
+      scrollbar = {
+        margin = "0px 4px";
+        "handle-width" = 8;
+        "handle-color" = "white";
+        "background-color" = "@shade-shadow";
+        "border-radius" = 4;
+      };
 
-    # Error message settings
-    errorMessage = {
-      padding = "100px";
-      border = "0px solid";
-      borderRadius = "0px";
-      backgroundColor = "#1E2127";  # Semi-transparent background
-      textColor = "#FFFFFFFF";  # White text
-    };
+      message = {
+        "background-color" = "@shade-bg";
+        border = "1px solid";
+        "border-color" = "transparent";
+        "border-radius" = 12;
+        padding = 24;
+      };
 
-    # Textbox settings
-    textbox = {
-      backgroundColor = "transparent";
-      textColor = "#FFFFFFFF";  # White text
-      verticalAlign = 0.5;
-      horizontalAlign = 0.5;
-      highlight = "none";
-    };
+      "error-message" = {
+        padding = 100;
+        border = "0px solid";
+        "border-radius" = 0;
+        "background-color" = "black / 10%";
+        "text-color" = "@text";
+      };
 
-    # Inputbar settings
-    inputbar = {
-      children = [ "prompt", "entry" ];
-      borderRadius = "12px";
-      backgroundColor = "#282B31";  # Same as shade-bg
-      textColor = "#FFFFFFFF";  # White text
-      spacing = "12px";
-      margin = "0% 28%";
-      padding = "14px";
-    };
+      textbox = {
+        "background-color" = "transparent";
+        "text-color" = "@text";
+        "vertical-align" = "center";
+        "horizontal-align" = "center";
+        highlight = "none";
+      };
 
-    # Prompt settings
-    prompt = {
-      backgroundColor = "transparent";
-      textColor = "inherit";
-    };
+      mainbox = {
+        children = [ "inputbar" "message" "listview" "mode-switcher" ];
+        "background-color" = "transparent";
+        spacing = 24;
+        margin = 0;
+        padding = "100px 226px";
+      };
 
-    # Entry settings
-    entry = {
-      backgroundColor = "transparent";
-      textColor = "inherit";
-      cursor = "inherit";
-      placeholder = " ";
-      placeholderColor = "inherit";
-    };
+      inputbar = {
+        children = [ "prompt" "entry" ];
+        "border-radius" = 12;
+        "background-color" = "@shade-bg";
+        "text-color" = "@text";
+        spacing = 12;
+        margin = "0% 28%";
+        padding = 14;
+      };
 
-    # Mode switcher settings
-    modeSwitcher = {
-      backgroundColor = "transparent";
-      border = "0px";
-      margin = "0px";
-      padding = "0px";
-      spacing = "12px";
-    };
+      prompt = {
+        "background-color" = "transparent";
+        "text-color" = "inherit";
+      };
 
-    # Button settings
-    button = {
-      padding = "12px 0px";
-      borderRadius = "12px";
-      backgroundColor = "#FFFFFF1A";  # Light shadow background
-      textColor = "#FFFFFFFF";  # White text
-      cursor = "pointer";
-    };
+      "textbox-prompt-colon" = {
+        expand = false;
+        str = "::";
+        "background-color" = "transparent";
+        "text-color" = "inherit";
+      };
 
-    buttonSelected = {
-      backgroundColor = "#282B31";  # Selected button background
-      border = "1px solid transparent";
-      textColor = "#FFFFFF";  # White text
+      entry = {
+        "background-color" = "transparent";
+        "text-color" = "inherit";
+        cursor = "inherit";
+        placeholder = " ";
+        "placeholder-color" = "inherit";
+      };
+
+      listview = {
+        cursor = "default";
+        columns = 6;
+        lines = 4;
+        cycle = true;
+        dynamic = true;
+        scrollbar = false;
+        layout = "vertical";
+        reverse = false;
+        "fixed-height" = true;
+        "fixed-columns" = true;
+        "background-color" = "transparent";
+        "text-color" = "@text";
+        spacing = 0;
+        margin = 0;
+        padding = 0;
+      };
+
+      "mode-switcher" = {
+        "background-color" = "transparent";
+        border = 0;
+        margin = 0;
+        padding = 0;
+        spacing = 12;
+      };
+
+      button = {
+        padding = "12px 0px";
+        "border-radius" = 12;
+        "background-color" = "@shade-shadow";
+        "text-color" = "@text";
+        cursor = "pointer";
+      };
+
+      "button selected" = {
+        "background-color" = "@shade-bg";
+        border = "1px solid";
+        "border-color" = "transparent";
+        "text-color" = "white";
+      };
     };
   };
 }
-

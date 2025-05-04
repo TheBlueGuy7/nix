@@ -28,6 +28,7 @@
     gnutar
     hyprlock
     qalculate-gtk
+    code-cursor
 
     # GUI utils
 
@@ -50,6 +51,7 @@
     tree
     gh
     neovim
+    btop
 
     # Hyprland
 

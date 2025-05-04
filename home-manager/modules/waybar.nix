@@ -61,17 +61,17 @@
             phone = "";
             portable = "";
             car = "";
-            default = ["" "" ""];
+            default = [" " " " " "];
         };
         on-click = "pavucontrol";
     };
 
     "network" = {
-      format-wifi = "{essid} ({signalStrength}%) ";
-      format-ethernet = "{ifname} ";
-      format-disconnected = "";
+      format-wifi = "{essid} ({signalStrength}%)  ";
+      format-ethernet = "{ifname}  ";
+      format-disconnected = " ";
       max-length = 50;
-      on-click = "kitty -e nmtui";
+      on-click = "alacritty -e ifconfig";
     };
 
     "custom/mem" = {
