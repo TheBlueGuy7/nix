@@ -21,7 +21,7 @@
 
       conf = "nvim ${flakeDir}/nixos/configuration.nix";
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
-      hyprconf = "nvim ${flakeDir}/home-manager/modules/wms/hyprland.nix";
+      hyprconf = "nvim ${flakeDir}/home-manager/modules/hyprland.nix";
 
       ll = "ls -l";
       v = "nvim";

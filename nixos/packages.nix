@@ -26,6 +26,8 @@
     zip
     unzip
     gnutar
+    hyprlock
+    qalculate-gtk
 
     # GUI utils
 
@@ -80,6 +82,7 @@
     powerline-fonts
     powerline-symbols
     fira
+    nerd-fonts.jetbrains-mono
   ];
   
   programs.steam.enable = true;

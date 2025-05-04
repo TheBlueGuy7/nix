@@ -175,7 +175,7 @@
         ", XF86MonBrightnessUp, exec, brightnessctl set +5% "
 
 	"$mainMod SHIFT, S, exec, hyprshot -m region -z -o /home/hunor/Screenshots"
-	", PrtSc, exec, hyprshot -m output -o /home/hunor/Screenshots"
+	"$mainMod, L, exec, hyprlock"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
