@@ -22,13 +22,6 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     vlc
-    github-desktop
-
-    # CLI apps
-
-    btop
-    neovim
-    wget
     curl
     zip
     unzip
@@ -53,6 +46,7 @@
     eza
     fzf
     tree
+    gh
 
     # Hyprland
 
@@ -67,6 +61,7 @@
     home-manager
     jdk8
     xpad
+    gnome-keyring
 
     # Themes
     plata-theme
