@@ -10,7 +10,7 @@
     
     firefox
     brave
-    vesktop discord
+    vesktop
     vscodium
     polymc
     xfce.thunar
