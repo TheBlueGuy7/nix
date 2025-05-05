@@ -23,11 +23,6 @@
       inputs.hyprlang.follows = "hyprland/hyprlang";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
 
   };
@@ -52,7 +47,6 @@
 	  modules = [
 
 	    ./nixos/configuration.nix
-	    inputs.nixvim.nixosModules.nixvim
 
           ];
       };

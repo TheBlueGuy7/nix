@@ -1,11 +1,14 @@
 {
   imports = [
-    ./cursor.nix
-    ./alacritty.nix
-    ./dunst.nix
-    ./hyprland.nix
-    ./waybar.nix
-    ./hyprpaper.nix
-    ./rofi.nix
+    # ./cursor.nix
+    # ./git.nix
+    # ./htop.nix
+    # ./alacritty.nix
+    # ./rofi.nix
+    # ./dunst.nix
+    # ./qt.nix
+
+    # ./hyprland.nix
+    # ./waybar.nix
   ];
 }

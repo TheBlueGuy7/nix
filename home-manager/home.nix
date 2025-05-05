@@ -2,8 +2,8 @@
 {
 
   imports = [
-    ./modules/bundle.nix
-    ./zsh.nix
+   ./modules/cursor.nix
+   ./zsh.nix
   ];
 
   home = {

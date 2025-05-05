@@ -40,7 +40,7 @@
 
     zsh
     fastfetch
-    alacritty
+    alacritty kitty
     git
     nodejs_23
     pnpm_10
@@ -52,6 +52,12 @@
     gh
     neovim
     btop
+    stow
+    exiftool
+    steghide
+    stegseek
+    nmap
+    gobuster
 
     # Hyprland
 
@@ -85,6 +91,7 @@
     powerline-symbols
     fira
     nerd-fonts.jetbrains-mono
+    powerline-fonts
   ];
   
   programs.steam.enable = true;
