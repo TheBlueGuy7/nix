@@ -9,5 +9,6 @@
     #./xserver.nix
     #./plasma.nix
     #./nixvim/nixvim.nix
+    # ./virtmanager.nix
   ];
 }

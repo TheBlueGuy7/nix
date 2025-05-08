@@ -66,6 +66,14 @@ width=300
 skip_display=yes
 summary="*Dugó Dani*"
 
+[ignore_nigger]
+skip_display=yes
+summary="*NIGGER*"
+
+[ignore_rbx]
+skip_display=yes
+summary="*robloxmanface*"
+
 [urgency_critical]
 background="#BF616AFF"
 foreground="#D8DEE9"

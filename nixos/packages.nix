@@ -29,6 +29,10 @@
     hyprlock
     qalculate-gtk
     code-cursor
+    parsec-bin
+    arduino-ide
+    filezilla
+    p7zip
 
     # GUI utils
 
@@ -40,7 +44,7 @@
 
     zsh
     fastfetch
-    alacritty kitty
+    alacritty
     git
     nodejs_23
     pnpm_10
@@ -58,6 +62,7 @@
     stegseek
     nmap
     gobuster
+    lynx
 
     # Hyprland
 
@@ -73,6 +78,7 @@
     jdk8
     xpad
     gnome-keyring
+    wineWowPackages.wayland
 
     # Themes
     plata-theme

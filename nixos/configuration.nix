@@ -24,6 +24,7 @@
 
   services.flatpak.enable = true;
   services.dbus.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
 
   xdg.portal = {
@@ -31,7 +32,5 @@
     #extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
     wlr.enable = true;
   };
-
-
 }
 
