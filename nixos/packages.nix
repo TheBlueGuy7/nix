@@ -33,6 +33,7 @@
     arduino-ide
     filezilla
     p7zip
+    gparted
 
     # GUI utils
 
@@ -71,6 +72,7 @@
     hyprshot
     dunst
     hyprpaper
+    hyprpolkitagent
 
     # Other
 

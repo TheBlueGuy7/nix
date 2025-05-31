@@ -39,7 +39,7 @@
     "cpu": {
       "format": "{usage}% ",
       "interval": 2,
-      "on-click": "alacritty -e btop"
+      "on-click": "btop"
     },
     "custom/mem": {
       "exec": "free -h | awk '/Mem:/{printf $3}'",

@@ -11,6 +11,7 @@
   nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   networking.hostName = "radiator-nixos";
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Budapest";
 
