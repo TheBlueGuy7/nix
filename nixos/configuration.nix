@@ -1,0 +1,37 @@
+{ inputs, config, pkgs, ... }:
+
+{
+  imports =
+    [ 
+      ./hardware-configuration.nix
+      ./packages.nix
+      ./modules/bundle.nix
+    ];
+  
+  nixpkgs.overlays = [ inputs.polymc.overlay ];
+
+  networking.hostName = "radiator-nixos";
+  networking.networkmanager.enable = true;
+
+  time.timeZone = "Europe/Budapest";
+
+  console = {
+  #   font = "Lat2-Terminus16";
+    keyMap = "us";
+  };
+  system.stateVersion = "25.05";
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  services.flatpak.enable = true;
+  services.dbus.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+
+
+  xdg.portal = {
+    enable = true;
+    #extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+    wlr.enable = true;
+  };
+}
+
