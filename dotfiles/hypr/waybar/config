@@ -1,0 +1,137 @@
+[
+  {
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{percent}% {icon}",
+      "format-icons": [
+        " "
+      ],
+      "min-length": 7
+    },
+    "battery": {
+      "format": "{capacity}% {icon}",
+      "format-alt": "{time} {icon}",
+      "format-charging": "{capacity}%  ",
+      "format-icons": [
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ],
+      "format-plugged": "{capacity}% ",
+      "on-update": "$HOME/.config/waybar/scripts/check_battery.sh",
+      "states": {
+        "critical": 15,
+        "warning": 30
+      }
+    },
+    "clock": {
+      "format-alt": "{:%Y-%m-%d}",
+      "timezone": "Europe/Budapest",
+      "tooltip": false
+    },
+    "cpu": {
+      "format": "{usage}%  ",
+      "interval": 2,
+      "on-click": "btop"
+    },
+    "custom/mem": {
+      "exec": "free -h | awk '/Mem:/{printf $3}'",
+      "format": "{}  " ,
+      "interval": 2,
+      "on-click": "alacritty -e btop",
+      "tooltip": false
+    },
+    "custom/weather": {
+      "exec": "$HOME/.config/waybar/scripts/wttr.py",
+      "format": "{}",
+      "interval": 1800,
+      "return-type": "json",
+      "tooltip": true
+    },
+    "hyprland/language": {
+      "format-en": "HU",
+      "min-length": 5,
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+      "disable-scroll": true
+    },
+    "keyboard-state": {
+      "capslock": true,
+      "format": "{icon} ",
+      "format-icons": {
+        "locked": " ",
+        "unlocked": " "
+      }
+    },
+    "layer": "top",
+    "margin": "4 5 0 5",
+    "modules-center": [
+      "clock"
+    ],
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "network",
+      "custom/mem",
+      "cpu",
+      "tray"
+    ],
+    "network": {
+      "format-disconnected": " ",
+      "format-ethernet": "{ifname}  ",
+      "format-wifi": "{essid} ({signalStrength}%)  ",
+      "max-length": 50,
+      "on-click": "alacritty -e ifconfig"
+    },
+    "position": "top",
+    "pulseaudio": {
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-icons": {
+        "car": "",
+        "default": [
+          " ",
+          " ",
+          " "
+        ],
+        "hands-free": "",
+        "headphone": " ",
+        "headset": " ",
+        "phone": " ",
+        "portable": " "
+      },
+      "format-muted": "{volume}%  ",
+      "format-source": "{volume}% ",
+      "format-source-muted": " ",
+      "on-click": "pavucontrol",
+      "scroll-step": 5
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "tooltip": false
+    },
+    "tray": {
+      "icon-size": 16,
+      "spacing": 0
+    }
+  }
+]
