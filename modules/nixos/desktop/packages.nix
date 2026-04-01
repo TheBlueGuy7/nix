@@ -26,6 +26,7 @@
     # Creative
     blender
     krita
+    inkscape
 
     # Office & notes
     libreoffice-qt6-fresh
@@ -78,8 +79,7 @@
 
     # Pentesting
     aircrack-ng
-    airgeddon
-    angryipscanner
+angryipscanner
     burpsuite
     dnslookup
     exiftool
@@ -94,6 +94,5 @@
     sqlmap
     steghide
     stegseek
-    inkscape
   ];
 }

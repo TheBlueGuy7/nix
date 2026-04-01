@@ -7,7 +7,7 @@
   services.mullvad-vpn.package = pkgs-stable.mullvad-vpn;
   services.samba.enable = false;
   services.udev.packages = with pkgs; [ platformio-core.udev ];
-
+  programs.gamescope.enable = true;
   programs.xfconf.enable = true;
 
   environment.systemPackages = with pkgs; [
