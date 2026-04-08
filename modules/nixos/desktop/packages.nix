@@ -55,6 +55,7 @@
     trayscale
     unixcw
     wireshark
+    bottles
 
     # Development
     android-tools
@@ -75,6 +76,7 @@
     protontricks
     r2modman
     winetricks
+    heroic
     #inputs.polymc
 
     # Pentesting

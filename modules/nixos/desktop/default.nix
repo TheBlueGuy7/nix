@@ -3,6 +3,7 @@
   imports = [
     ./audio.nix
     ./display.nix
+    ./gnome.nix
     ./graphics.nix
     ./helium.nix
     ./network.nix
