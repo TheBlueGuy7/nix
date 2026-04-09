@@ -1,0 +1,164 @@
+window {
+    background-color: transparent;
+}
+
+* {
+    font-family: "JetBrains Mono";
+    font-weight: bold;
+    font-size: 12px;
+    color: #c0caf5;
+}
+
+/* ── Bar ──────────────────────────────────────── */
+.bar {
+    background-color: #1a1b26;
+    border-radius: 8px;
+    padding: 0 8px;
+    min-height: 24px;
+}
+
+/* ── Workspaces ───────────────────────────────── */
+.workspace-btn {
+    padding: 0 6px;
+    margin: 2px 1px;
+    border-radius: 6px;
+    color: #565f89;
+    background: transparent;
+    min-width: 20px;
+    min-height: 20px;
+    font-size: 11px;
+}
+
+.workspace-btn:hover {
+    color: #c0caf5;
+    background: #24283b;
+}
+
+.focused {
+    background: #3d59a1;
+    color: #c0caf5;
+}
+
+/* ── Clock ────────────────────────────────────── */
+.clock {
+    background: transparent;
+    padding: 0 6px;
+    color: #c0caf5;
+}
+
+/* ── Volume button ────────────────────────────── */
+.volume-btn {
+    padding: 0 6px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.volume-btn:hover {
+    background: #24283b;
+}
+
+/* ── Network ──────────────────────────────────── */
+.network {
+    padding: 0 6px;
+}
+
+/* ── System monitor ───────────────────────────── */
+.sysmon {
+    padding: 0 6px;
+    border-radius: 6px;
+    background: transparent;
+    color: #565f89;
+}
+
+.sysmon:hover {
+    background: #24283b;
+    color: #c0caf5;
+}
+
+.sysmon-sep {
+    color: #414868;
+}
+
+/* ── System tray ──────────────────────────────── */
+.tray {
+    padding: 0 2px;
+}
+
+.tray menubutton {
+    padding: 0 2px;
+    background: transparent;
+}
+
+.tray menubutton:hover {
+    background: #24283b;
+    border-radius: 4px;
+}
+
+/* ── Audio popup ──────────────────────────────── */
+.audio-popup {
+    padding: 14px;
+    min-width: 300px;
+    background-color: #1a1b26;
+    border-radius: 10px;
+}
+
+.popup-title {
+    font-size: 11px;
+    color: #565f89;
+    margin-bottom: 2px;
+}
+
+.main-volume-row {
+    padding: 2px 0;
+}
+
+.mute-btn {
+    background: transparent;
+    border-radius: 6px;
+    padding: 4px;
+    min-width: 28px;
+    min-height: 28px;
+}
+
+.mute-btn:hover {
+    background: #24283b;
+}
+
+slider trough {
+    background: #24283b;
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+slider trough highlight {
+    background: #7aa2f7;
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+slider trough slider {
+    background: #c0caf5;
+    border-radius: 50%;
+    min-width: 12px;
+    min-height: 12px;
+}
+
+.popup-volume-label {
+    min-width: 36px;
+    font-size: 11px;
+    color: #565f89;
+}
+
+.app-mixer {
+    margin-top: 4px;
+}
+
+.app-mixer-item {
+    padding: 2px 0;
+}
+
+.app-volume-pct {
+    font-size: 10px;
+    color: #565f89;
+    min-width: 32px;
+}
