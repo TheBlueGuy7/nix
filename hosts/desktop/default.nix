@@ -53,7 +53,6 @@
     mesa-demos
     inputs.agenix.packages.${pkgs.system}.default
     hyprlandPlugins.csgo-vulkan-fix
-    uv
   ];
 
   fonts.fontDir.enable = true;

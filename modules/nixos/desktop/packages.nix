@@ -6,6 +6,7 @@
     chromium
     firefox
     tor-browser
+    inputs.zen-browser.packages."${pkgs.system}".default
 
     # Communication
     localsend
