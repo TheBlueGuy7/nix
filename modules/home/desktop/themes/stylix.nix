@@ -5,6 +5,7 @@
         noctalia-shell.enable = false;
         qt.enable = true;
         gtk.enable = true;
+	neovim.enable = false;
     };
     stylix.polarity = "dark";
     stylix.fonts = {
