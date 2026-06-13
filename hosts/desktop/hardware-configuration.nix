@@ -7,38 +7,23 @@
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "v4l2loopback" "snd-aloop" ];
-  boot.extraModulePackages = with config.boot.kernelPackages;
-    [ v4l2loopback.out ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
-  '';
-  boot.blacklistedKernelModules = [
-    "dvb_usb_rtl28xxu"
-    "rtl2832"
-    "rtl2830"
-  ];
-  boot.loader.limine.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" "exfat" ];
-
+ 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/cdcd2717-db3c-4934-9968-740abd5377e1";
+    { device = "/dev/disk/by-uuid/90943879-88c6-4694-b9fa-2dbe5f959b0a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F408-1EF0";
+    { device = "/dev/disk/by-uuid/D41A-D27B";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/29368fa6-fdaa-4c27-beff-c81b67d39dd8"; }
+    [ { device = "/dev/disk/by-uuid/838abdfd-a0ca-40fc-bb77-1560f05a0ac3"; }
     ];
+
+  # fileSystems / swapDevices are provided by ./disko.nix.
 
   networking.useDHCP = lib.mkDefault true;
   hardware.rtl-sdr.enable = true;

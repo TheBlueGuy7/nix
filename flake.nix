@@ -1,9 +1,16 @@
 {
   description = "Multi-machine NixOS configuration";
 
+  # nixConfig = {
+  #   extra-substituters = [ "https://noctalia.cachix.org" ];
+  #   extra-trusted-public-keys = [
+  #     "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+  #   ];
+  # };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -47,6 +54,16 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/legacy-v4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -59,6 +76,8 @@
     hyprlang,
     rose-pine-hyprcursor,
     hyprland,
+    noctalia,
+    stylix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -75,8 +94,9 @@
       modules = [
         ./modules/nixos/core
         inputs.home-manager.nixosModules.default
-        inputs.disko.nixosModules.default
+        # inputs.disko.nixosModules.default
         inputs.agenix.nixosModules.default
+        inputs.stylix.nixosModules.stylix
       ] ++ modules;
     };
 

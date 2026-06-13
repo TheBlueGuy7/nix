@@ -3,14 +3,13 @@
   imports = [
     ./audio.nix
     ./display.nix
-    ./gnome.nix
     ./graphics.nix
     ./helium.nix
     ./network.nix
     ./packages.nix
     ./services.nix
     ./virtualisation.nix
-    ../satisfactory.nix
+    ./stylix.nix
   ];
 
   programs.helium.enable = true;

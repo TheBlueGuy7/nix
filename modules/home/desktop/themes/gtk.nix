@@ -2,10 +2,10 @@
 {
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
+    #theme = {
+    #  name = "Adwaita-dark";
+    #  package = pkgs.gnome-themes-extra;
+    #};
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override {
@@ -21,8 +21,8 @@
     };
   };
 
-  dconf.settings."org/gnome/desktop/interface" = {
-    color-scheme = "prefer-dark";
-    gtk-theme = "Adwaita-dark";
-  };
+  #dconf.settings."org/gnome/desktop/interface" = {
+  #  color-scheme = "prefer-dark";
+  #  gtk-theme = "Adwaita-dark";
+  #};
 }

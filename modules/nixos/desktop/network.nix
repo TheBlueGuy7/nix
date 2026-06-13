@@ -8,7 +8,4 @@
   };
   networking.nameservers = [ "192.168.0.11" ];
   networking.networkmanager.insertNameservers = [ "192.168.0.11" ];
-  networking.hosts = {
-    "192.168.0.36" = [ "cloud.blueguy.hu" ];
-  };
 }

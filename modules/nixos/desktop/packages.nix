@@ -26,7 +26,9 @@
     # Creative
     blender
     krita
-    inkscape
+    orca-slicer
+    qsstv
+    bambu-studio
 
     # Office & notes
     libreoffice-qt6-fresh
@@ -40,8 +42,10 @@
     qdirstat
     thunar
     tumbler
+    spacedrive
 
     # Utilities
+    ghostty
     cryptsetup
     qbittorrent
     dmidecode
@@ -56,6 +60,15 @@
     unixcw
     wireshark
     bottles
+    hollywood
+    zpaqfranz
+    veracrypt
+    bind
+    tldr
+
+    # Qt theming
+    adwaita-qt
+    adwaita-qt6
 
     # Development
     android-tools
@@ -68,10 +81,12 @@
     python313
     python313Packages.pip
     vscode
+    opencode
 
     # Gaming
     labymod-launcher
     lutris
+    osu-lazer-bin
     prismlauncher
     protontricks
     r2modman
@@ -81,7 +96,7 @@
 
     # Pentesting
     aircrack-ng
-angryipscanner
+    angryipscanner
     burpsuite
     dnslookup
     exiftool
@@ -96,5 +111,8 @@ angryipscanner
     sqlmap
     steghide
     stegseek
+
+
+    osu-lazer
   ];
 }

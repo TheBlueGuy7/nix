@@ -1,15 +1,15 @@
-{
+{ disks ? [ "/dev/nvme0n1" ], ... }: {
   disko.devices = {
     disk = {
       my-disk = {
-        device = "/dev/sda";
+        device = builtins.head disks;
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
             ESP = {
               type = "EF00";
-              size = "512M";
+              size = "1G";
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -17,14 +17,16 @@
               };
             };
 
+            # p2: Swap (Fixed 32G)
             swap = {
-              size = "8G";
+              size = "32G";
               content = {
                 type = "swap";
-                resumeDevice = true;
+                resumeDevice = true; # Keeps your hibernation settings
               };
             };
 
+            # p3: Root (Fills the rest)
             root = {
               size = "100%";
               content = {
