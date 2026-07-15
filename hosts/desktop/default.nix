@@ -81,7 +81,7 @@
     config.common.default = "*";
   };
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld.enable = false;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
     zlib

@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.programs.helium;
 
-  version = "0.10.7.1";
+  version = "0.13.3.1";
 
   helium = pkgs.stdenv.mkDerivation {
     pname = "helium-browser";
@@ -15,7 +15,7 @@ with lib; let
 
     src = pkgs.fetchurl {
       url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64_linux.tar.xz";
-      hash = "sha256-ZHziopdl8ClZQJUHXtIIb9ok/flZoixMdlLMKf5HUUo=";
+      hash = "sha256-R/cGyWuBrLeFhucrpkRpQN9k/MWN3JlnwSufEsqVkmY=";
     };
 
     nativeBuildInputs = with pkgs; [
@@ -51,18 +51,18 @@ with lib; let
       systemd
       vulkan-loader
       wayland
-      xorg.libX11
-      xorg.libXScrnSaver
-      xorg.libXcomposite
-      xorg.libXcursor
-      xorg.libXdamage
-      xorg.libXext
-      xorg.libXfixes
-      xorg.libXi
-      xorg.libXrandr
-      xorg.libXrender
-      xorg.libXtst
-      xorg.libxshmfence
+      libX11
+      libXScrnSaver
+      libXcomposite
+      libXcursor
+      libXdamage
+      libXext
+      libXfixes
+      libXi
+      libXrandr
+      libXrender
+      libXtst
+      libxshmfence
       libuuid
     ];
 

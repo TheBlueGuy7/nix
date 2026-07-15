@@ -9,6 +9,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -17,5 +18,6 @@
     lsp-plugins
     pavucontrol
     qpwgraph
+    pipewire.jack
   ];
 }

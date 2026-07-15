@@ -6,4 +6,9 @@
   environment.systemPackages = with pkgs; [
     virt-manager
   ];
+
+
+  virtualisation.docker.enable = true;
+
+  users.users."blueguy".extraGroups = [ "docker" ];
 }

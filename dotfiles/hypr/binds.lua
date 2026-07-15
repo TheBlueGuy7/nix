@@ -4,7 +4,7 @@
 local terminal = "ghostty"
 local fileManager = "thunar"
 local menu = "noctalia-shell ipc call launcher toggle"
-local browser = "zen"
+local browser = "chromium"
 local mainMod = "SUPER"
 
 -- Apps / session
