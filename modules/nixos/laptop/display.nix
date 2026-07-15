@@ -37,7 +37,7 @@
     wf-recorder
     wl-clip-persist
     wl-clipboard
-
+    awww
     # Themes & icons
     arc-icon-theme
     colloid-icon-theme

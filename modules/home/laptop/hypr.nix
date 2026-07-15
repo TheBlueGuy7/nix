@@ -12,7 +12,7 @@
   #  systemd.enable = false;
   #};
 
-  # programs.hyprlock.enable = true;
+  programs.hyprlock.enable = true;
   services.hypridle.enable = true;
 
   home.file.".config/hypr".source = ../../../dotfiles/laptop/hypr;
