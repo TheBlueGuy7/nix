@@ -14,22 +14,23 @@
     inputs.agenix.packages.${pkgs.system}.default
   ];
 
+  fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
     jetbrains-mono
+    adwaita-fonts
     noto-fonts
     noto-fonts-color-emoji
     twemoji-color-font
     font-awesome_6
-    powerline-fonts
-    powerline-symbols
     fira
     nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka
+    nerd-fonts.adwaita-mono
   ];
 
   time.timeZone = "Europe/Budapest";
   console.keyMap = "us";
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
   xdg.portal = {
     enable = true;
@@ -38,4 +39,15 @@
   };
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    icu
+    nss
+    openssl
+    curl
+    expat
+    config.boot.kernelPackages.nvidia_x11
+  ];
 }
