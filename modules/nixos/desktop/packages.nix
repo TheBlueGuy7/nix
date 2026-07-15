@@ -55,7 +55,6 @@
     kdePackages.kleopatra        # Certificate/GPG key manager
     kdePackages.kwrited          # GPG password entry daemon helper
     qalculate-gtk              # Scientific calculator
-    sdrpp                      # SDR (software defined radio) receiver
     trayscale                  # Tailscale tray GUI
     unixcw                     # Morse code training/practice
     wireshark                  # Network protocol analyzer
@@ -89,6 +88,14 @@
     agg                        # Asciicast to GIF converter
     wireguard-tools	       # VPN tool
     glow		       # Terminal markdown viewer
+
+    # Radio
+
+    sdrpp
+    rtl_433
+    sdrangel
+    fldigi
+
 
     # Qt theming
     adwaita-qt                # GNOME Adwaita theme for Qt5
