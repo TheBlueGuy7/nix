@@ -5,6 +5,8 @@
     ./plasma.nix
     ./network.nix
     ./packages.nix
+    ./display.nix
+    ./services.nix
   ];
 
   home-manager = {
@@ -12,6 +14,6 @@
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
-    users."blueguy" = import ../../home/laptop;
+    users."etc" = import ../../home/laptop;
   };
 }

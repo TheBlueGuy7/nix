@@ -27,22 +27,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    inputs.polymc.overlay
-    (final: prev: {
-      glxinfo = prev.mesa-demos;
-    })
-    (final: prev: {
-      pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
-        (python-final: python-prev: {
-          picosvg = python-prev.picosvg.overridePythonAttrs (oldAttrs: {
-            doCheck = false;
-          });
-        })
-      ];
-    })
-  ];
-
   environment.systemPackages = with pkgs-stable; [
     gnome-keyring
     gh

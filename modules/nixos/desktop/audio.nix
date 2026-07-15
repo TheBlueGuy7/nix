@@ -13,7 +13,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    crosspipe
     easyeffects
     lsp-plugins
     pavucontrol

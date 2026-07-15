@@ -2,10 +2,11 @@
 {
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
+  nftables.enable = true;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 ];
+    allowedTCPPorts = [  ];
   };
-  networking.nameservers = [ "192.168.0.11" ];
-  networking.networkmanager.insertNameservers = [ "192.168.0.11" ];
+  networking.nameservers = [ "10.10.0.3" "192.168.0.5" ];
+  networking.networkmanager.insertNameservers = [ "10.10.0.3" "192.168.0.5" ];
 }

@@ -21,7 +21,6 @@
     mpv                      # Minimalist media player
     obs-studio                # Screen recording/streaming
     shotwell                 # Photo manager/viewer
-    spotify                  # Music streaming client
     vlc                       # Media player
     # handbrake             # Video transcoder (disabled)
 
