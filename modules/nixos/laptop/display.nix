@@ -38,6 +38,7 @@
     wl-clip-persist
     wl-clipboard
     awww
+    brightnessctl
     # Themes & icons
     arc-icon-theme
     colloid-icon-theme
