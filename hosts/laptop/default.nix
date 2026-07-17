@@ -20,7 +20,7 @@
     "rtl2832"
     "rtl2830"
   ];
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" "exfat" ];
 
