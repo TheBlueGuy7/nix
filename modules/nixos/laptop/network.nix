@@ -6,7 +6,7 @@
     nftables.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [  ];
+      allowedTCPPorts = [ ];
     };
     nameservers = [ "10.10.0.3" ];
     networkmanager.insertNameservers = [ "10.10.0.3" ];
