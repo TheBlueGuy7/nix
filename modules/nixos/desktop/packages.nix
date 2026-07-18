@@ -32,13 +32,13 @@
     shotwell                 # Photo manager/viewer
     vlc                       # Media player
     # handbrake             # Video transcoder (disabled)
+    ani-cli
 
     # Creative
     blender                  # 3D modeling/animation suite
     krita                     # Digital painting app
     orca-slicer                # 3D printing slicer
     qsstv                     # Slow-scan TV / fax software
-    bambu-studio
 
     # Office & notes
     libreoffice-qt6-fresh     # Office suite
@@ -98,9 +98,9 @@
     agg                        # Asciicast to GIF converter
     wireguard-tools	       # VPN tool
     glow		       # Terminal markdown viewer
+    viu
 
     # Radio
-
     sdrpp
     rtl_433
     sdrangel

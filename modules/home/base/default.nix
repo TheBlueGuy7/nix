@@ -4,6 +4,7 @@
     ./neovim.nix
     ./cursor.nix
     ./ghostty.nix
+    ./fastfetch.nix
   ];
 
   home.stateVersion = "26.05";

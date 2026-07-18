@@ -107,10 +107,10 @@
 
       add-zsh-hook precmd __build_prompt
 
-      # ── Run nitch on shell startup ────────────────────────────────
-      if command -v nitch &>/dev/null && [[ -z "''$NITCH_SHOWN" ]]; then
-        export NITCH_SHOWN=1
-        nitch
+      # ── Run fetch on shell startup ────────────────────────────────
+      if command -v fastfetch &>/dev/null && [[ -z "''$FETCH_SHOWN" ]]; then
+        export FETCH_SHOWN=1
+        fastfetch
       fi
 
       # ── Local Sourcing ────────────────────────────────────────────
