@@ -6,4 +6,5 @@
   services.udev.packages = with pkgs; [ platformio-core.udev ];
   programs.gamescope.enable = true;
   programs.xfconf.enable = true;
+  services.blueman.enable = true;
 }

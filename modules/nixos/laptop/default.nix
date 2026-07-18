@@ -7,6 +7,7 @@
     ./packages.nix
     ./display.nix
     ./services.nix
+    ./graphics.nix
   ];
 
   home-manager = {

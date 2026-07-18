@@ -6,15 +6,15 @@
     nftables.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [  ];
+      allowedTCPPorts = [ ];
     };
-    nameservers = [ "192.168.0.5" ];
-    networkmanager.insertNameservers = [ "192.168.0.5" ];
+    nameservers = [ "10.10.0.3" ];
+    networkmanager.insertNameservers = [ "10.10.0.3" ];
 
     wg-quick.interfaces = {
       wg0 = {
         configFile = "/etc/wireguard/wg0.conf";
-        autostart = false;
+        autostart = true;
       };
     };
   };

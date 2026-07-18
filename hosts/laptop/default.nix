@@ -5,6 +5,25 @@
     ./hardware-configuration.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" "v4l2loopback" "snd-aloop" ];
+  boot.extraModulePackages = with config.boot.kernelPackages;
+    [ v4l2loopback.out ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+  '';
+  boot.blacklistedKernelModules = [
+    "dvb_usb_rtl28xxu"
+    "rtl2832"
+    "rtl2830"
+  ];
+  boot.loader.limine.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" "exfat" ];
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
