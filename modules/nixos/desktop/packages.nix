@@ -1,5 +1,14 @@
 { pkgs, inputs, ... }:
 {
+	
+  nixpkgs.overlays = [
+  (final: prev: {
+    bambu-studio = prev.bambu-studio.override {
+      withNvidiaGLWorkaround = true;
+    };
+  })
+];
+
   environment.systemPackages = with pkgs; [
     # Browsers
     brave                   # Chromium-based privacy browser
@@ -29,6 +38,7 @@
     krita                     # Digital painting app
     orca-slicer                # 3D printing slicer
     qsstv                     # Slow-scan TV / fax software
+    bambu-studio
 
     # Office & notes
     libreoffice-qt6-fresh     # Office suite
