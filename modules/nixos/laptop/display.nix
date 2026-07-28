@@ -40,6 +40,7 @@
     awww
     brightnessctl
     mako
+    libnotify
     # Themes & icons
     arc-icon-theme
     colloid-icon-theme

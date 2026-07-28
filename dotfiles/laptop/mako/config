@@ -1,0 +1,50 @@
+# ~/.config/mako/config
+# Matches Hyprland palette: surface #0f1115, border #35373d, text #cdd6e1, urgent #b85a5a
+
+# Positioning
+anchor=top-right
+margin=10
+padding=15
+width=350
+height=110
+
+# Shape — sharp corners, matches decoration { rounding = 0 }
+border-radius=0
+border-size=2
+
+# Timing
+default-timeout=6000
+ignore-timeout=0
+
+# Layer & behavior
+layer=overlay
+sort=-time
+max-visible=5
+
+# Font
+font=JetBrainsMono Nerd Font 11
+
+# Colors — pulled from hyprland.conf palette
+background-color=#0f1115ee
+text-color=#cdd6e1
+border-color=#35373d
+
+progress-color=over #1b1e25
+
+# Icons
+icons=1
+max-icon-size=48
+icon-path=/usr/share/icons/Papirus-Dark
+
+[urgency=low]
+border-color=#1b1e25
+text-color=#888888
+default-timeout=3000
+
+[urgency=normal]
+border-color=#35373d
+
+[urgency=high]
+border-color=#b85a5a
+text-color=#cdd6e1
+default-timeout=0
