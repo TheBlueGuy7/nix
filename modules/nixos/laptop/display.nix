@@ -39,6 +39,7 @@
     wl-clipboard
     awww
     brightnessctl
+    mako
     # Themes & icons
     arc-icon-theme
     colloid-icon-theme

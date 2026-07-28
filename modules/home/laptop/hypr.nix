@@ -25,6 +25,6 @@
   programs.waybar.enable = true;
   home.file.".config/waybar".source = ../../../dotfiles/laptop/waybar;
 
-  # services.dunst.enable = true;
-  # home.file.".config/dunst".source = ../../../dotfiles/hypr/dunst;
+  services.mako.enable = true;
+  home.file.".config/mako".source = ../../../dotfiles/laptop/mako;
 }
