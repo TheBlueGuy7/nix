@@ -31,6 +31,7 @@
     gh
     git
     inputs.agenix.packages.${pkgs.system}.default
+    polkit_gnome
   ];
 
   fonts.fontDir.enable = true;
@@ -69,4 +70,9 @@
     expat
     config.boot.kernelPackages.nvidia_x11
   ];
+
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
+  security.pam.services.sddm.fprintAuth = true;
+  security.polkit.enable = true;
 }

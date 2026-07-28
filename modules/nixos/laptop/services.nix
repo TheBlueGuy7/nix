@@ -7,4 +7,5 @@
   programs.gamescope.enable = true;
   programs.xfconf.enable = true;
   services.blueman.enable = true;
+  services.fprintd.enable = true;
 }
