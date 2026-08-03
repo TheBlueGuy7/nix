@@ -76,5 +76,12 @@
     curl
     expat
     config.boot.kernelPackages.nvidia_x11
+    xorg.libX11
+    xorg.libXext
+    xorg.libXtst
+    xorg.libXi
+    xorg.libXrender
+    fontconfig
+    libGL
   ];
 }

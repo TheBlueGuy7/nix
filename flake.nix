@@ -1,29 +1,12 @@
 {
   description = "Multi-machine NixOS configuration";
 
-  # nixConfig = {
-  #   extra-substituters = [ "https://noctalia.cachix.org" ];
-  #   extra-trusted-public-keys = [
-  #     "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-  #   ];
-  # };
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprpaper = {
-      url = "github:hyprwm/hyprpaper";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprlang = {
-      url = "github:hyprwm/hyprlang";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,7 +20,6 @@
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprlang.follows = "hyprlang";
     };
 
     hyprland = {
@@ -65,14 +47,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+    yt-x = {
+      url = "github:Benexl/yt-x";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    yt-x = {
-        url = "github:Benexl/yt-x";
-        inputs.nixpkgs.follows = "nixpkgs";
+    unsloth-llama-src = {
+      url = "github:unslothai/llama.cpp"; 
+      flake = false;
     };
 
   };
@@ -82,13 +64,12 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
-    hyprpaper,
     polymc,
-    hyprlang,
     rose-pine-hyprcursor,
     hyprland,
     noctalia,
     stylix,
+    unsloth-llama-src,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -98,7 +79,6 @@
       config.allowUnfree = true;
     };
 
-    # Build a NixOS system. Always includes core + home-manager + agenix.
     mkHost = { modules }: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs pkgs-stable; };
@@ -108,6 +88,24 @@
         # inputs.disko.nixosModules.default
         inputs.agenix.nixosModules.default
         inputs.stylix.nixosModules.stylix
+	({ pkgs, ... }: {
+          nixpkgs.config.allowUnfree = true;
+
+          nixpkgs.overlays = [
+            (final: prev: {              
+              llama-cpp = (prev.llama-cpp.override { 
+                cudaSupport = true; 
+              }).overrideAttrs (oldAttrs: {
+                pname = "llama-cpp-unsloth";
+                version = "10225";
+                src = unsloth-llama-src;
+                patches = [];
+		npmDepsHash = "sha256-pjdbI6NcZRlJVd62xhgbLhWrwFYwgsIwjORqvo1+VD8=";
+              });
+
+            })
+          ];
+        })
       ] ++ modules;
     };
 

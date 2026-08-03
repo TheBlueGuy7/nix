@@ -14,14 +14,14 @@
     brave                   # Chromium-based privacy browser
     firefox                 # Mozilla web browser
     tor-browser              # Anonymized browsing via Tor
-    inputs.zen-browser.packages."${system}".default  # Zen browser
     ungoogled-chromium       # Chromium without Google services
 
     # Communication
-    localsend               # Local network file/text sharing (AirDrop-like)
+    localsend               # Local network file/text sharing
     qtox                     # Tox protocol messenger client
     teamspeak6-client        # Voice chat client
     vesktop                  # Discord client (Vencord-enhanced)
+    concord-tui
 
     # Media
     audacity                 # Audio editor
@@ -33,6 +33,7 @@
     vlc                       # Media player
     # handbrake             # Video transcoder (disabled)
     ani-cli
+    mov-cli
 
     # Creative
     blender                  # 3D modeling/animation suite
@@ -53,6 +54,7 @@
     thunar                    # Lightweight file manager
     tumbler                   # Thumbnail generation service
     yazi                      # Terminal file manager
+    superfile
 
     # Utilities
     ghostty                   # GPU-accelerated terminal emulator
@@ -99,6 +101,8 @@
     wireguard-tools	       # VPN tool
     glow		       # Terminal markdown viewer
     viu
+    aria2
+
 
     # Radio
     sdrpp
@@ -153,8 +157,11 @@
     sqlmap                      # SQL injection testing tool
     steghide                    # Steganography embed/extract tool
     stegseek                    # Steghide password cracker
-    xxd                         # Hex dump utility
+    xxd      			# Hex dump utility
+    tcpdump
 
 
+    llama-cpp
   ];
+  
 }
