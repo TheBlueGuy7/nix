@@ -112,7 +112,6 @@
     aircrack-ng                 # Wireless network security auditing
     angryipscanner               # Fast IP/network scanner
     burpsuite                   # Web app security testing proxy
-    dnslookup                   # DNS lookup client
     exiftool                    # Metadata reader/editor for files
     gobuster                    # Directory/DNS brute-forcer
     hashcat                     # Password recovery/cracking
@@ -123,9 +122,10 @@
     metasploit                  # Penetration testing framework
     nmap                        # Network scanner
     sqlmap                      # SQL injection testing tool
-    steghide                    # Steganography embed/extract tool
+    steghide zsteg              # Steganography embed/extract tool
     stegseek                    # Steghide password cracker
-    xxd                         # Hex dump utility
+    xxd      			# Hex dump utility
+    tcpdump 
 
 
   ];
