@@ -927,7 +927,7 @@
         "prismlauncher": "prismlauncher",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor",
         "stylix": "stylix",
-        "unsloth-llama-src": "unsloth-llama-src",
+        "unsloth-tarball-src": "unsloth-tarball-src",
         "yt-x": "yt-x"
       }
     },
@@ -1193,20 +1193,17 @@
         "type": "github"
       }
     },
-    "unsloth-llama-src": {
+    "unsloth-tarball-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1785742619,
-        "narHash": "sha256-Z1aD2TmykRnxw4gCcotFDaJ+p80RR7cC2tGOZO3VBTM=",
-        "owner": "unslothai",
-        "repo": "llama.cpp",
-        "rev": "b6637ded542591d8a82227d4bf383a3289db445b",
-        "type": "github"
+        "lastModified": 1785683228,
+        "narHash": "sha256-t97YoUO7uxl1o2386wmSdsx0CRaDDUVMqzvwHMuBEq8=",
+        "type": "tarball",
+        "url": "https://github.com/unslothai/llama.cpp/releases/download/b10225-mix-345e1e3/llama.cpp-source-commit-d2a74a4a3cd1bbc60127bebc6f8334e987d6d005.tar.gz"
       },
       "original": {
-        "owner": "unslothai",
-        "repo": "llama.cpp",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://github.com/unslothai/llama.cpp/releases/download/b10225-mix-345e1e3/llama.cpp-source-commit-d2a74a4a3cd1bbc60127bebc6f8334e987d6d005.tar.gz"
       }
     },
     "utils": {
