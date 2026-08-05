@@ -53,8 +53,7 @@
     qdirstat                  # Disk usage visualizer
     thunar                    # Lightweight file manager
     tumbler                   # Thumbnail generation service
-    yazi                      # Terminal file manager
-    superfile
+    yazi superfile            # Terminal file manager
 
     # Utilities
     ghostty                   # GPU-accelerated terminal emulator

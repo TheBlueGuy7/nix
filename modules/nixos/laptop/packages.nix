@@ -5,7 +5,6 @@
     brave                   # Chromium-based privacy browser
     firefox                 # Mozilla web browser
     tor-browser              # Anonymized browsing via Tor
-    inputs.zen-browser.packages."${system}".default  # Zen browser
     ungoogled-chromium       # Chromium without Google services
 
     # Communication
@@ -41,7 +40,7 @@
     qdirstat                  # Disk usage visualizer
     thunar                    # Lightweight file manager
     tumbler                   # Thumbnail generation service
-    yazi                      # Terminal file manager
+    yazi superfile            # Terminal file manager
 
     # Utilities
     ghostty                   # GPU-accelerated terminal emulator
