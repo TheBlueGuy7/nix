@@ -49,7 +49,7 @@
     numix-icon-theme-circle
     papirus-folders
     papirus-icon-theme
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     # inputs.noctalia.packages.${pkgs.system}.default
   ];
 
