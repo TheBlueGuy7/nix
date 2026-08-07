@@ -17,6 +17,7 @@
 
   home.file.".config/hypr".source = ../../../dotfiles/desktop/hypr;
   home.file.".wallpapers".source = ../../../dotfiles/common/wallpapers;
+  home.file.".pfp.png".source = ../../../dotfiles/common/.pfp.png;
 
 
   # programs.rofi.enable = true;
