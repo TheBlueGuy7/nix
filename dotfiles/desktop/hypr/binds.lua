@@ -3,7 +3,7 @@
 
 local terminal = "ghostty"
 local fileManager = "thunar"
-local menu = "noctalia-shell ipc call launcher toggle"
+local menu = "noctalia msg panel-toggle launcher"
 local browser = "chromium"
 local mainMod = "SUPER"
 
@@ -18,8 +18,8 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region -z -o ~/Pictures/Screenshots"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu lock"))
+hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia msg session lock"))
 
 -- Move focus
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "l" }))

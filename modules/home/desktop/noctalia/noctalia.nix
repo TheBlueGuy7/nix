@@ -1,3 +1,10 @@
+# Noctalia Shell Nix Configuration (v5)
+# Base configuration: layout, behavior, widgets, and sane defaults.
+# Visual theming lives in ./noctalia-theme.nix.
+#
+# All values use lib.mkDefault so the theme file (or per-host overrides)
+# can change them without priority conflicts.
+
 { pkgs, lib, inputs, ... }:
 
 {
@@ -13,6 +20,11 @@
     settings = {
       # ─── Shell (General & App Launcher) ─────────────────────────────────
       shell = {
+        # Prevent the first-run wizard from writing GUI overrides to
+        # ~/.local/state/noctalia/settings.toml (this caused the duplicate
+        # default bar and the ignored theme).
+        setup_wizard_enabled = lib.mkDefault false;
+
         corner_radius_scale = lib.mkDefault 1.0;
         font_family = lib.mkDefault "sans-serif";
         time_format = lib.mkDefault "{:%H:%M}";
@@ -23,7 +35,7 @@
         clipboard_enabled = lib.mkDefault true;
         clipboard_keep_from_closed_apps = lib.mkDefault true;
         clipboard_auto_paste = lib.mkDefault "auto";
-        
+
         animation = {
           enabled = lib.mkDefault true;
           speed = lib.mkDefault 1.0;
@@ -52,11 +64,11 @@
         };
 
         mpris = {
-          blacklist = lib.mkDefault [];
+          blacklist = lib.mkDefault [ ];
         };
       };
 
-      # ─── Theme Defaults (Overridden by noctalia-theme.nix) ─────────────
+      # ─── Theme defaults (overridden by noctalia-theme.nix) ──────────────
       theme = {
         mode = lib.mkDefault "dark";
         source = lib.mkDefault "builtin";
@@ -64,7 +76,7 @@
         pure_black_dark = lib.mkDefault false;
       };
 
-      # ─── Wallpaper ──────────────────────────────────────────────────────
+      # ─── Wallpaper ─────────────────────────────────────────────────────
       wallpaper = {
         enabled = lib.mkDefault true;
         fill_mode = lib.mkDefault "crop";
@@ -73,7 +85,7 @@
         transition_duration = lib.mkDefault 1500;
         edge_smoothness = lib.mkDefault 0.05;
         directory = lib.mkDefault "/home/blueguy/.wallpapers";
-        
+
         automation = {
           enabled = lib.mkDefault false;
           interval_seconds = lib.mkDefault 300;
@@ -100,7 +112,7 @@
         background_opacity = lib.mkDefault 1.0;
         offset_x = lib.mkDefault 20;
         offset_y = lib.mkDefault 8;
-        
+
         kinds = {
           volume = lib.mkDefault true;
           brightness = lib.mkDefault true;
@@ -131,7 +143,7 @@
       };
 
       calendar = { enabled = lib.mkDefault true; };
-      
+
       control_center = {
         calendar = {
           show_events_card = lib.mkDefault true;
@@ -155,7 +167,7 @@
         enable_ddcutil = lib.mkDefault false;
       };
 
-      # Note: nightlight and location are handled in noctalia-theme.nix
+      # Note: nightlight & location are owned by noctalia-theme.nix
 
       idle = {
         behavior = {
@@ -175,7 +187,7 @@
       # ─── Bar & Widgets ──────────────────────────────────────────────────
       bar = {
         order = lib.mkDefault [ "default" ];
-        
+
         default = {
           position = lib.mkDefault "top";
           enabled = lib.mkDefault true;
@@ -190,7 +202,8 @@
           shadow = lib.mkDefault true;
           auto_hide = lib.mkDefault false;
           reserve_space = lib.mkDefault true;
-          
+
+          # v4 left/center/right → v5 start/center/end
           start = lib.mkDefault [ "clock" "system-monitor" "media" "active-window" ];
           center = lib.mkDefault [ "workspaces" ];
           end = lib.mkDefault [ "tray" "tailscale" "notifications" "volume" "control-center" "session" ];

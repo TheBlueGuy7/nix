@@ -13,8 +13,7 @@ hl.monitor({ output = "HDMI-A-1", mode = "1920x1080", position = "1920x0", scale
 -------------------
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("/run/current-system/sw/libexec/polkit-kde-authentication-agent-1")
-	hl.exec_cmd("noctalia-shell")
+	hl.exec_cmd("noctalia")
 	hl.exec_cmd("hypridle")
 end)
 

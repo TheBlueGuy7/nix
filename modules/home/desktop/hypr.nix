@@ -16,7 +16,7 @@
   services.hypridle.enable = true;
 
   home.file.".config/hypr".source = ../../../dotfiles/desktop/hypr;
-    home.file.".wallpapers".source = ../../../dotfiles/common/wallpapers;
+  home.file.".wallpapers".source = ../../../dotfiles/common/wallpapers;
 
 
   # programs.rofi.enable = true;

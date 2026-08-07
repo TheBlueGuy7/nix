@@ -4,8 +4,8 @@
     ../base
     ./themes
     ./hypr.nix
-    ./noctalia/noctalia.nix
-    # ./vnc.nix
+    ./noctalia.nix
+    #./vnc.nix
   ];
 
   home.sessionVariables = {
