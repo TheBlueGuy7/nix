@@ -79,7 +79,7 @@
     kiwix                      # Offline Wikipedia/content reader
     kiwix-tools                # CLI tools for Kiwix content
     youtube-tui                # Terminal YouTube client
-    inputs.yt-x.packages."${system}".default  # YouTube terminal player
+    inputs.yt-x.packages."${pkgs.stdenv.hostPlatform.system}".default  # YouTube terminal player
     ncdu                       # Disk usage analyzer (terminal)
     duf                        # Disk usage/free space viewer
     ripgrep                    # Fast recursive text search

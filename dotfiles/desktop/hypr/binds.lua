@@ -20,6 +20,9 @@ hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind("Print", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia msg session lock"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 
 -- Move focus
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "l" }))
