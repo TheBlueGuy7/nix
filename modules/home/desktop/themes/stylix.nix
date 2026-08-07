@@ -1,11 +1,14 @@
 { pkgs, ... }:
 {
     stylix.targets = {
-        ghostty.enable = true;
-        noctalia-shell.enable = false;
+        ghostty.enable = false;
         qt.enable = true;
         gtk.enable = true;
 	neovim.enable = false;
+	btop.enable = true;
+	obsidian.enable = true;
+	bat.enable = true;
+	zed.enable = true;
     };
     stylix.polarity = "dark";
     stylix.fonts = {
