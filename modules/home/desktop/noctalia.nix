@@ -508,7 +508,7 @@
       # session menu, etc.
       shell = {
         app_icon_colorize = false;
-        avatar_path = "/home/blueguy/Pictures/pfp/v2-6pheq-107od.jpg";
+        avatar_path = "/home/blueguy/.pfp.png";
         button_borders = true;
         card_borders = false;
         clipboard_auto_paste = "auto";
