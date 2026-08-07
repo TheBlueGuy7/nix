@@ -86,6 +86,7 @@
     agg                        # Asciicast to GIF converter
     wireguard-tools	       # VPN tool
     glow		       # Terminal markdown viewer
+    gnupg
 
     # Qt theming
     adwaita-qt                # GNOME Adwaita theme for Qt5

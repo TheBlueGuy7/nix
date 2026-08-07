@@ -101,6 +101,7 @@
     glow		       # Terminal markdown viewer
     viu
     aria2
+    gnupg
 
 
     # Radio
