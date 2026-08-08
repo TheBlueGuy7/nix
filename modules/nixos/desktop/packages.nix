@@ -1,13 +1,5 @@
 { pkgs, inputs, ... }:
 {
-	
-  nixpkgs.overlays = [
-  (final: prev: {
-    bambu-studio = prev.bambu-studio.override {
-      withNvidiaGLWorkaround = true;
-    };
-  })
-];
 
   environment.systemPackages = with pkgs; [
     # Browsers
@@ -101,7 +93,8 @@
     glow		       # Terminal markdown viewer
     viu
     aria2
-    gnupg
+    pinentry-tty
+    #gnupg
 
 
     # Radio
@@ -161,6 +154,47 @@
 
 
     llama-cpp
+    gnupg25
   ];
-  
+
+  nixpkgs.overlays = [
+      (final: prev: {
+      gnupg25 = prev.gnupg.overrideAttrs (old: rec {
+        pname = "gnupg";
+        version = "2.5.21";
+        src = final.fetchurl {
+          url = "mirror://gnupg/gnupg/gnupg-${version}.tar.bz2";
+          hash = "sha256-468sjKpGpmqTKfp8aICvJgRRkU2BlZW+q8LCZZezE1I=";
+        };
+        patches = [ ];
+        postPatch = "";
+      });
+      })
+
+    (final: prev: {
+      llama-cpp = (prev.llama-cpp.override {
+        cudaSupport = true;
+        cudaPackages = final.cudaPackages;
+      }).overrideAttrs (oldAttrs: {
+        pname = "llama-cpp-unsloth";
+        version = "10225";
+        src = inputs.unsloth-tarball-src;
+        patches = oldAttrs.patches or [];
+	    	npmDepsHash = "sha256-B7uEynAG70a3xauBKc20RuFa9cnWaWzVBCh+LPLBnIM=";
+        cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [
+          (prev.lib.cmakeBool "GGML_NATIVE" false)
+          (prev.lib.cmakeBool "GGML_CPU_ALL_VARIANTS" false)
+          (prev.lib.cmakeFeature "CMAKE_CUDA_ARCHITECTURES" "75")
+        ];
+        env = (oldAttrs.env or {}) // {
+          NIX_CFLAGS_COMPILE = toString ((oldAttrs.env.NIX_CFLAGS_COMPILE or "") + " -march=skylake -mtune=skylake");
+        };
+        preConfigure = (oldAttrs.preConfigure or "") + ''
+          export NIX_ENFORCE_NO_NATIVE=0
+        '';
+      });
+    })
+  ];
+
+
 }
